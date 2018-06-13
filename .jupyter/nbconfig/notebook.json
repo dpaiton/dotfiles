@@ -1,0 +1,28 @@
+{
+  "load_extensions": {
+    "comment-uncomment/main": true,
+    "collapsible_headings/main": true,
+    "contrib_nbextensions_help_item/main": true,
+    "vim_binding/vim_binding": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "ruler/main": true
+  },
+  "CodeCell": {
+    "cm_config": {
+      "indentUnit": 2,
+      "autoCloseBrackets": false
+    }
+  },
+  "ruler_column": [
+    "120"
+  ],
+  "Notebook": {
+    "Toolbar": false,
+    "Header": false
+  },
+  "Cell": {
+    "cm_config": {
+      "lineNumbers": true
+    }
+  }
+}
