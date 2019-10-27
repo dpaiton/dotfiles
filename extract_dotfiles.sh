@@ -1,11 +1,14 @@
 #!/bin/sh
 CWD=$PWD
-cp -fr .tmux/ ~/
+cp -fr .tmux ~/
 cp -f .tmux.conf ~/
 cp -f .bash* ~/
 cp -f .gitconfig ~/
 cp -f .profile ~/
-cp -fr scripts/ ~/
+cp -fr scripts ~/
+chmod +x ~/scripts/list_drives.sh
+chmod +x ~/scripts/setup_tmux.sh
+chmod +x ~/scripts/sshcolour.sh
 cp -f .vimrc ~/
 cp -fr .vim ~/
 cp -fr .jupyter/ ~/
