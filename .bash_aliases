@@ -12,7 +12,7 @@ alias .2='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
-alias listAliases="cat ~/.bash_aliases"
+alias list-aliases="cat ~/.bash_aliases"
 alias killstopped="kill `jobs -ps`"
 
 # OSX Aliases
