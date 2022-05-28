@@ -1,0 +1,13 @@
+services:
+  projects:
+    image: torch-jupyter:latest
+    ports:
+      - 8888:8888
+    volumes:
+      - projects-volume:/projects
+    environment:
+      JUPYTER_TOKEN: docker
+
+volumes:
+  projects-volume:
+    external: true

@@ -1,0 +1,12 @@
+numpy
+pandas
+scipy
+torch
+jupyterLab
+ipython
+scikit-learn
+scikit-image
+seaborn
+matplotlib
+h5py
+wandb
