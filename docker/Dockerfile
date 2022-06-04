@@ -1,6 +1,7 @@
-FROM nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu18.04
+FROM nvidia/cuda:11.6.2-cudnn8-runtime-ubuntu20.04
 
 WORKDIR /projects
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update -y && apt install -y python3-pip git vim nodejs tmux sudo
 COPY ./requirements.txt /projects

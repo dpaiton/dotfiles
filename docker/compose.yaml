@@ -1,12 +1,17 @@
 services:
   projects:
-    image: torch-jupyter:latest
+    image: dpaiton/torch-jupyter:latest
     ports:
       - 8888:8888
     volumes:
       - projects-volume:/projects
     environment:
       JUPYTER_TOKEN: docker
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
 
 volumes:
   projects-volume:
