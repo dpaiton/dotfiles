@@ -1,5 +1,32 @@
 # Configuration file for jupyter-notebook.
 
+## The IP address the notebook server will listen on.
+c.NotebookApp.ip = '*' #default is 'localhost', older jupyter veresions accept '*'
+
+## The full path to an SSL/TLS certificate file.
+c.NotebookApp.certfile = u'~/.jupyter/mycert.pem'
+
+## The full path to a private key file for usage with SSL/TLS.
+c.NotebookApp.keyfile = u'~/.jupyter/mycert.key'
+
+# Run all nodes interactively
+c.InteractiveShell.ast_node_interactivity = "all"
+
+# High res plot display
+c.InlineBackend.figure_format = 'retina'
+
+## The port the notebook server will listen on.
+c.NotebookApp.port = 8892 #default is 8888
+
+## Whether to open in a browser after starting. The specific browser used is
+#  platform dependent and determined by the python standard library `webbrowser`
+#  module, unless it is overridden using the --browser (NotebookApp.browser)
+#  configuration option.
+c.NotebookApp.open_browser = False
+
+## Whether to allow the user to run the notebook as root.
+c.NotebookApp.allow_root = True
+
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
 #------------------------------------------------------------------------------
@@ -58,9 +85,6 @@
 #  Ignored if allow_origin is set.
 #c.NotebookApp.allow_origin_pat = ''
 
-## Whether to allow the user to run the notebook as root.
-#c.NotebookApp.allow_root = False
-
 ## DEPRECATED use base_url
 #c.NotebookApp.base_project_url = '/'
 
@@ -74,9 +98,6 @@
 #  standard library module, which allows setting of the BROWSER environment
 #  variable to override it.
 #c.NotebookApp.browser = ''
-
-## The full path to an SSL/TLS certificate file.
-c.NotebookApp.certfile = u'/home/dpaiton/.jupyter/mycert.pem'
 
 ## The full path to a certificate authority certificate for SSL/TLS client
 #  authentication.
@@ -158,9 +179,6 @@ c.NotebookApp.certfile = u'/home/dpaiton/.jupyter/mycert.pem'
 #  limited.
 #c.NotebookApp.iopub_msg_rate_limit = 1000
 
-## The IP address the notebook server will listen on.
-c.NotebookApp.ip = '0.0.0.0' #default is 'localhost', older jupyter veresions accept '*'
-
 ## Supply extra arguments that will be passed to Jinja environment.
 #c.NotebookApp.jinja_environment_options = {}
 
@@ -176,15 +194,6 @@ c.NotebookApp.ip = '0.0.0.0' #default is 'localhost', older jupyter veresions ac
 #  The Api of KernelSpecManager is provisional and might change without warning
 #  between this version of Jupyter and the next stable one.
 #c.NotebookApp.kernel_spec_manager_class = 'jupyter_client.kernelspec.KernelSpecManager'
-
-## The full path to a private key file for usage with SSL/TLS.
-c.NotebookApp.keyfile = u'/home/dpaiton/.jupyter/mycert.pem'
-
-# Run all nodes interactively
-c.InteractiveShell.ast_node_interactivity = "all"
-
-# High res plot display
-c.InlineBackend.figure_format = 'retina'
 
 ## The login handler class to use.
 #c.NotebookApp.login_handler_class = 'notebook.auth.login.LoginHandler'
@@ -207,12 +216,6 @@ c.InlineBackend.figure_format = 'retina'
 ## The directory to use for notebooks and kernels.
 #c.NotebookApp.notebook_dir = ''
 
-## Whether to open in a browser after starting. The specific browser used is
-#  platform dependent and determined by the python standard library `webbrowser`
-#  module, unless it is overridden using the --browser (NotebookApp.browser)
-#  configuration option.
-c.NotebookApp.open_browser = False
-
 ## Hashed password to use for web authentication.
 #
 #  To generate, type in a python/IPython shell:
@@ -229,9 +232,6 @@ c.NotebookApp.open_browser = False
 #  In such a case, server the notebook server on localhost is not secure since
 #  any user can connect to the notebook server via ssh.
 #c.NotebookApp.password_required = False
-
-## The port the notebook server will listen on.
-c.NotebookApp.port = 8892 #default is 8888
 
 ## The number of additional ports to try if the specified port is not available.
 #c.NotebookApp.port_retries = 50
