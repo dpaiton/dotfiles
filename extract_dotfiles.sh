@@ -1,5 +1,5 @@
 #!/bin/sh
-CWD=$PWD
+cwd=$(pwd)
 cp -fr .tmux ~/
 cp -f .tmux.conf ~/
 cp -f .bash* ~/
@@ -11,11 +11,7 @@ chmod +x ~/scripts/setup_tmux.sh
 chmod +x ~/scripts/sshcolour.sh
 cp -f .vimrc ~/
 cp -fr .vim ~/
-cp -fr .jupyter/ ~/
-chmod +x setup_jupyter_vim.sh
-cd ~/.jupyter/
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mycert.pem -out mycert.pem
 mkdir -p ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cd $CWD
+cd $cwd
 ./setup_jupyter_vim.sh
