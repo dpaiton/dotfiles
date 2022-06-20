@@ -1,6 +1,7 @@
 #!/bin/sh
 cwd=$(pwd)
 jupyter_dir=$(jupyter --data-dir)
+echo "moving config into $(jupyter-dir)"
 
 mkdir -p $jupyter_dir/nbextensions
 cd $jupyter_dir/nbextensions
