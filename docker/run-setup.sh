@@ -1,2 +1,13 @@
 #!/bin/sh
-docker run --gpus all --publish 8888:8888 --mount source=projects-volume,target=/projects --env JUPYTER_TOKEN=docker --pull always dpaiton/torch-jupyter:latest
+docker run \
+--rm \
+--gpus all \
+--publish 8892:8892 \
+--mount source=projects-volume,target=/home/projects \
+--pull always \
+dpaiton/torch-jupyter:latest
+
+#docker.io/library/torch-jupyter:latest
+#
+#--pull always
+#--env JUPYTER_TOKEN=docker \
