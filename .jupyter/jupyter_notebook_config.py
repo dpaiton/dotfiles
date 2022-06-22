@@ -1,13 +1,13 @@
 # Configuration file for jupyter-notebook.
 
 ## The IP address the notebook server will listen on.
-c.NotebookApp.ip = '*' #default is 'localhost', older jupyter veresions accept '*'
+c.ServerApp.ip = '*' #default is 'localhost', older jupyter veresions accept '*'
 
 ## The full path to an SSL/TLS certificate file.
-c.NotebookApp.certfile = u'~/.jupyter/mycert.pem'
-
-## The full path to a private key file for usage with SSL/TLS.
-c.NotebookApp.keyfile = u'~/.jupyter/mycert.key'
+#c.ServerApp.certfile = u'/root/.jupyter/mycert.pem'
+#
+### The full path to a private key file for usage with SSL/TLS.
+#c.ServerApp.keyfile = u'/root/.jupyter/mycert.pem'
 
 # Run all nodes interactively
 c.InteractiveShell.ast_node_interactivity = "all"
@@ -16,7 +16,7 @@ c.InteractiveShell.ast_node_interactivity = "all"
 c.InlineBackend.figure_format = 'retina'
 
 ## The port the notebook server will listen on.
-c.NotebookApp.port = 8892 #default is 8888
+c.ServerApp.port = 8892 #default is 8888
 
 ## Whether to open in a browser after starting. The specific browser used is
 #  platform dependent and determined by the python standard library `webbrowser`
@@ -25,7 +25,24 @@ c.NotebookApp.port = 8892 #default is 8888
 c.NotebookApp.open_browser = False
 
 ## Whether to allow the user to run the notebook as root.
-c.NotebookApp.allow_root = True
+c.ServerApp.allow_root = True
+
+## Token used for authenticating first-time connections to the server.
+#  
+#  When no password is enabled, the default is to generate a new, random token.
+#  
+#  Setting to an empty string disables authentication altogether, which is NOT
+#  RECOMMENDED.
+c.ServerApp.token = 'docker_jupyter'
+
+## Whether to enable MathJax for typesetting math/TeX
+#  
+#  MathJax is the javascript library Jupyter uses to render math/LaTeX. It is
+#  very large, so you may want to disable it if you have a slow internet
+#  connection, or for offline use of the notebook.
+#  
+#  When disabled, equations etc. will appear as their untransformed TeX source.
+c.NotebookApp.enable_mathjax = True
 
 #------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
@@ -141,15 +158,6 @@ c.NotebookApp.allow_root = True
 #  implies.
 #c.NotebookApp.disable_check_xsrf = False
 
-## Whether to enable MathJax for typesetting math/TeX
-#  
-#  MathJax is the javascript library Jupyter uses to render math/LaTeX. It is
-#  very large, so you may want to disable it if you have a slow internet
-#  connection, or for offline use of the notebook.
-#  
-#  When disabled, equations etc. will appear as their untransformed TeX source.
-#c.NotebookApp.enable_mathjax = True
-
 ## extra paths to look for Javascript notebook extensions
 #c.NotebookApp.extra_nbextensions_path = []
 
@@ -257,14 +265,6 @@ c.NotebookApp.allow_root = True
 
 ## Supply overrides for terminado. Currently only supports "shell_command".
 #c.NotebookApp.terminado_settings = {}
-
-## Token used for authenticating first-time connections to the server.
-#  
-#  When no password is enabled, the default is to generate a new, random token.
-#  
-#  Setting to an empty string disables authentication altogether, which is NOT
-#  RECOMMENDED.
-#c.NotebookApp.token = '<generated>'
 
 ## Supply overrides for the tornado.web.Application that the Jupyter notebook
 #  uses.
