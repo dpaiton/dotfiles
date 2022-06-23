@@ -1,9 +1,9 @@
 #!/bin/sh
 docker run \
---rm \
 --gpus all \
 --publish 8892:8892 \
 --mount source=projects-volume,target=/home/projects \
+--restart=always \
 --pull always \
 dpaiton/torch-jupyter:latest
 
