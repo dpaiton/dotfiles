@@ -10,6 +10,8 @@ EXPOSE 8892
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TORCH_CUDA_ARCH_LIST="8.6"
 
+RUN echo "alias python=python3" >> /root/.bash_aliases
+
 RUN apt update -y \
     && apt install -y sudo wget python3-pip git vim nodejs tmux nvidia-cuda-toolkit
 
@@ -35,8 +37,6 @@ RUN git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding \
 
 WORKDIR /
 CMD ["jupyter-lab", "--no-browser", "--config=/root/.jupyter/jupyter_notebook_config.py"]
-
-RUN echo 'alias python=python3' >> /root/.bashrc
 
 #RUN rm -rf /home/projects/dotfiles && git clone https://github.com/dpaiton/dotfiles.git /home/projects/dotfiles && chmod a+x /home/projects/dotfiles/setup_jupyter_vim.sh && . /home/projects/dotfiles/setup_jupyter_vim.sh
 
