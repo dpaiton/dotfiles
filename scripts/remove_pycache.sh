@@ -3,7 +3,7 @@
 # Check if directory has been provided
 if [ -z "$1" ]
 then
-    echo "No directory provided. Usage: ./script.sh <directory>"
+    echo "No directory provided. Usage: ./remove_pycache.sh <directory>"
     exit 1
 fi
 
